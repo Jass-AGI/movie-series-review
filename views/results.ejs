@@ -1,5 +1,7 @@
 <% include ./partials/header %>
 
-
+<% movies.Search.forEach(function(movie){ %>
+    <a href="movie_ratings/<%=movie.imdbID%>"><h3><%=movie.Title%></h3></a>
+ <%})%>
 
 <% include ./partials/footer %>

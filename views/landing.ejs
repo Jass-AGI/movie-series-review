@@ -6,7 +6,10 @@
 <!-- http://www.omdbapi.com/?t=breaking&apikey=7669c24 -->  
 
 
-
+<form action="/movie_ratings" method="post">
+    <input type="text" name="name" >
+    <button>Searchs</button>
+</form>
 
 <% movies.Search.forEach(function(movie){ %>
    <a href="movie_ratings/<%=movie.imdbID%>"><h3><%=movie.Title%></h3></a>
