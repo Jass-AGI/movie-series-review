@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<!-- contains 10 movies information -->
+<!-- <%= movies %>   -->
+<!-- Structure and format link-->
+<!-- http://www.omdbapi.com/?t=breaking&apikey=7669c24 -->  
+
+
+
+
+<% movies.Search.forEach(function(movie){ %>
+    <h3><%=movie.Title%></h3>
+<%})%>
+<% include ./partials/footer %>
