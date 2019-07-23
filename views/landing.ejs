@@ -9,6 +9,6 @@
 
 
 <% movies.Search.forEach(function(movie){ %>
-    <h3><%=movie.Title%></h3>
+   <a href="movie_ratings/<%=movie.imdbID%>"><h3><%=movie.Title%></h3></a>
 <%})%>
 <% include ./partials/footer %>

@@ -19,7 +19,14 @@ router.get("/movie_ratings",function(req,res){
 });
 
 router.get("/movie_ratings/:id",function(req,res){
-    res.render("show");
+    request.get("http://www.omdbapi.com/?apikey=7669c24&i="+req.params.id,function(error,response,body){
+        if(!error && response.statusCode == 200){
+            res.render("show",{movie:json.parse(body)});
+        }else{
+            console.log(error);
+            res.send("SOMETHING WENT WRONG");
+        }
+    });
 });
 
 router.post("/movie_ratings/:name",function(req,res){
