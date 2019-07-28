@@ -1,5 +1,18 @@
 <% include ./partials/header %>
 
-<!-- <img src= <%=movie.Poster %> style="width:20%; margin:0 auto;" > -->
+<!-- Structure and format link-->
+<!-- http://www.omdbapi.com/?t=breaking&apikey=7669c24 -->  
+
+<img src= <%=movie.Poster %> style="width:20%; margin:0 auto;" >
+
+<h2><%=movie.Title %></h2>
+
+
+<% reviews.forEach(function(review){ %>
+    <% if (movie.Title  == review.display_title){ %>
+        <h3> <%=review.summary_short%></h3>
+        <h4><a href=<%= review.link.url %>><%=review.link.suggested_link_text%></a></h4>
+    <%}%>
+<%})%>
 
 <% include ./partials/footer %>

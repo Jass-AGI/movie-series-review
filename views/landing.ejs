@@ -3,7 +3,7 @@
 <!-- contains 10 movies information -->
 <!-- <%= movies %>   -->
 <!-- Structure and format link-->
-<!-- http://www.omdbapi.com/?t=breaking&apikey=7669c24 -->  
+<!-- http://www.omdbapi.com/?s=breaking&apikey=7669c24 -->  
 
 
 <form action="/movie_ratings" method="post">
@@ -17,14 +17,19 @@
 
 <a href="/logout">log out</a>
 
+<%if(movies.Search){%>
 <% movies.Search.forEach(function(movie){ %>
    <a href="movie_ratings/<%=movie.imdbID%>"><h3><%=movie.Title%></h3></a>
+   <a> Add</a>
 <%})%>
-<% include ./partials/footer %>
+<%}%>
 
-<h3>WISHLIST</h3>
+
 <% if(currentUser){ %>
+    <h3>WISHLIST</h3>
     <%currentUser.wishlist.forEach(function(movie){ %>
         <a href="movie_ratings/<%=movie.key%>"><h3><%=movie.name%></h3></a>
     <%})%>
 <%}%>
+
+<% include ./partials/footer %>
